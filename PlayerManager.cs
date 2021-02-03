@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MyGameBackend
 {
-    public class PlayerManager
+    public class PlayerManager : IPlayerDal
     {
         IPlayerDal _playerDal;
         public PlayerManager (IPlayerDal playerDal)
