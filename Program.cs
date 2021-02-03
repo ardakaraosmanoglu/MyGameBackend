@@ -4,9 +4,20 @@ namespace MyGameBackend
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            PlayerManager playerManager = new PlayerManager(new PlayerData());
+
+            foreach (var player in playerManager.GetAll())
+            {
+                Console.WriteLine(player.PlayerNickname);
+            }
+
+            Console.WriteLine("===============================");
+
+            PlayerManager playerCheck = new PlayerManager(new PlayerCheckService());
+            playerCheck.Add(new Player { PlayerId = 1, PlayerName = "Beyza", PlayerSurname = "Beyaz", PlayerNickname = "Hyper", BirthYear = 2001 });
         }
+
     }
 }
